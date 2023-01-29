@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{% static 'img/header-logo.png' %}">
+        <title>Fair Map</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="header">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/header-logo.png' %}" width="132" height="49" alt="header-logo">
+                </a>
+                <nav>
+                    <ul class="menu">
+                        <li class="menu__list">
+                            <a {% if section == 'index' %} class="menu__link active" {% else %} class="menu__link link-hover" {% endif %} href="{% url 'index' %}">Fair Map
+                                <img class="map-icon" src="{% static 'img/tab-1-logo.png' %}" width="52" height="62" alt="tab-1-logo">
+                            </a>
+                        </li>
+                        <li class="menu__list">
+                            <a {% if section == 'show_fairmap' %} class="menu__link active" {% else %} class="menu__link link-hover" {% endif %} href="{% url 'show_fairmap' %}">Map
+                                <img src="{% static 'img/tab-2-logo.png' %}" width="100" height="100" alt="tab-2-logo">
+                            </a>
+                        </li>
+                        <li class="menu__list">
+                            <a {% if section == 'ranking' %} class="menu__link active" {% else %} class="menu__link link-hover" {% endif %} href="{% url 'ranking' %}">Ranking
+                                <img class="ranking-icon" src="{% static 'img/tab-3-logo.png' %}" width="150" height="125" alt="tab-3-logo">
+                            </a>
+                        </li>
+                        <li class="menu__list">
+                            <a {% if section == 'about' %} class="menu__link active" {% else %} class="menu__link link-hover" {% endif %} href="{% url 'about' %}">About us
+                                <img src="{% static 'img/tab-4-logo.png' %}" width="80" height="98" alt="tab-4-logo">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+                {% block content %}
+                {% endblock %}
+        </div>
+    </body>
+
+</html>

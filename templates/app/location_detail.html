@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="main">
+    <div class="main__inner">
+        <h1 class="main__title">Report of {{location_name}}</h1>
+        <div class="main__body">
+            <div class="main__location">
+                <p class="main__description-first">Location:</p>
+                <p class="main__description-lat">{{latitude}};</p>
+                <p class="main__description">{{longitude}}</p>
+            </div>
+            <div class="main__category">
+                <p class="main__description-first">Category:</p>
+                <p class="main__description">{{category}}</p>
+            </div>
+        </div>
+
+        <h1 class="main__title-second">Corruption Cases:</h1>
+
+        <div class="main__body">
+
+            <div class="comments">
+                {%for data in location_data%}
+                <p class="main__comments">{{ forloop.counter }}. {{data.comment}}</p>
+                {% endfor %}
+            </div>
+
+            <div class="comment__date">
+                {%for data in location_data%}
+                <p class="main__description">{{data.created_at}}</p>
+                {% endfor %}
+            </div>
+        </div>
+</main>
+
+{% endblock %}

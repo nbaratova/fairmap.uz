@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="main">
+    <div class="main__inner">
+        <h1 class="main__title">Ranking of Organizations</h1>
+
+        <div class="main__body">
+            <div class="main__location">
+                <p class="main__description-first">Location Name</p>
+            </div>
+            <div class="main__category">
+                <p class="main__description-first">Category</p>
+            </div>
+        </div>
+
+        <div class="main__body">
+            <div class="comments">
+                {%for data in ranking%}
+                <p class="main__comments">{{ forloop.counter }}. <a href="{% url 'location_detail' data.latitude data.longitude %}">{{data.location_name}}</a> ({{data.count}} cases)</p>
+                {% endfor %}
+            </div>
+
+            <div class="comment__date">
+                {%for data in ranking%}
+                <p class="main__comments">{{data.category}}</p>
+                {% endfor %}
+            </div>
+        </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{% static 'img/header-logo.png' %}">
+    <title>Fair Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <main class="main">
+            <form method="post" action="survey">
+                {% csrf_token %}
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude (auto input)" disabled
+                    style="color: #FF3300; padding: 10px 20px;">
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude (auto input)" disabled
+                    style="color: #FF3300; padding: 10px 20px;">
+                <input type="text" id="location_name" name="location_name" placeholder="Location Name"
+                    style="padding: 10px 20px;">
+                <select name="category" placeholder="Category" style="padding: 10px 20px;">
+                    {% for item in category %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+                    {% endfor %}
+                </select>
+                <input style="width: 845px; height: 40px; color: padding: 10px 20px;" type="textarea" id="comment"
+                    name="comment" placeholder="Comment">
+                <input type="submit" value="submit" style="background-color: color: white; padding: 10px 20px;">
+            </form>
+
+
+            <div id="map" style="height: 550px;"></div>
+        </main>
+    </div>
+
+    <script>
+        var map = L.map('map').setView([41.310, 69.280], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([41.310, 69.280], { draggable: true }).addTo(map);
+        marker.bindPopup("Drag me to your desired location").openPopup();
+        marker.on('dragend', function (e) {
+            document.getElementById('latitude').value = e.target._latlng.lat;
+            document.getElementById('longitude').value = e.target._latlng.lng;
+        });
+    </script>
+</body>
+
+</html>

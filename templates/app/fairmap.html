@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b8f8eaa69cfc040b67d6d5c3f706428a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b8f8eaa69cfc040b67d6d5c3f706428a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b8f8eaa69cfc040b67d6d5c3f706428a = L.map(
+                "map_b8f8eaa69cfc040b67d6d5c3f706428a",
+                {
+                    center: [41.32337966666666, 69.37479566666666],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4be829d9e3bca42a9c5065d9e1510ffd = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b8f8eaa69cfc040b67d6d5c3f706428a);
+        
+    
+            var marker_853c421085697b47dbff81578f6575b4 = L.marker(
+                [41.315401, 69.260061],
+                {}
+            ).addTo(map_b8f8eaa69cfc040b67d6d5c3f706428a);
+        
+    
+            var icon_0e1412ffefea4d65585f00701ddef81a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_853c421085697b47dbff81578f6575b4.setIcon(icon_0e1412ffefea4d65585f00701ddef81a);
+        
+    
+        var popup_4a01df10f35b0bb59630d295bce2481b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2af39e90051818d8c29ca211f1310165 = $(`<div id="html_2af39e90051818d8c29ca211f1310165" style="width: 100.0%; height: 100.0%;">Paxtakor markaziy stadioni<br><br>Corruption cases: 1<br><br><a href="/location_detail/41.315401/69.260061">Read Comments</a></div>`)[0];
+                popup_4a01df10f35b0bb59630d295bce2481b.setContent(html_2af39e90051818d8c29ca211f1310165);
+            
+        
+
+        marker_853c421085697b47dbff81578f6575b4.bindPopup(popup_4a01df10f35b0bb59630d295bce2481b)
+        ;
+
+        
+    
+    
+            var marker_72ba261eb3a53793ca836a97fd5117de = L.marker(
+                [41.327369, 69.427153],
+                {}
+            ).addTo(map_b8f8eaa69cfc040b67d6d5c3f706428a);
+        
+    
+            var icon_9cadf785fd44ba5e7fab345dd75e57d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_72ba261eb3a53793ca836a97fd5117de.setIcon(icon_9cadf785fd44ba5e7fab345dd75e57d7);
+        
+    
+        var popup_0effa8ad94373312b97a414ef2f8875e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f093d7934d1f7b3ba819f614d7e16223 = $(`<div id="html_f093d7934d1f7b3ba819f614d7e16223" style="width: 100.0%; height: 100.0%;">AKFA University<br><br>Corruption cases: 5<br><br><a href="/location_detail/41.327369/69.427153">Read Comments</a></div>`)[0];
+                popup_0effa8ad94373312b97a414ef2f8875e.setContent(html_f093d7934d1f7b3ba819f614d7e16223);
+            
+        
+
+        marker_72ba261eb3a53793ca836a97fd5117de.bindPopup(popup_0effa8ad94373312b97a414ef2f8875e)
+        ;
+
+        
+    
+    
+            var marker_91000a45cf873c3b8ce85e17262b2c5a = L.marker(
+                [41.327369, 69.437173],
+                {}
+            ).addTo(map_b8f8eaa69cfc040b67d6d5c3f706428a);
+        
+    
+            var icon_1ff628a5a5425652dd5427c07f8dbb07 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_91000a45cf873c3b8ce85e17262b2c5a.setIcon(icon_1ff628a5a5425652dd5427c07f8dbb07);
+        
+    
+        var popup_2b5aea237f755967fd1d5c7fd6233177 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1a7f9f81bf816d4977660153a9dcb52 = $(`<div id="html_b1a7f9f81bf816d4977660153a9dcb52" style="width: 100.0%; height: 100.0%;">New Uzbekistan Park<br><br>Corruption cases: 1<br><br><a href="/location_detail/41.327369/69.437173">Read Comments</a></div>`)[0];
+                popup_2b5aea237f755967fd1d5c7fd6233177.setContent(html_b1a7f9f81bf816d4977660153a9dcb52);
+            
+        
+
+        marker_91000a45cf873c3b8ce85e17262b2c5a.bindPopup(popup_2b5aea237f755967fd1d5c7fd6233177)
+        ;
+
+        
+    
+</script>
+</html>
